@@ -8,7 +8,7 @@ var express = require('express')
 	, mongodb = require("mongodb")
 	, ObjectID = mongodb.ObjectID;
 var http = require ('http');         // For serving a basic web page.
-var mongoose = require ("mongoose"); // The reason for this demo.
+var mongoose = require ('mongoose'); // The reason for this demo.
 
 var SchemaName = "Settings";
 
