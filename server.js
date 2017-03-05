@@ -30,9 +30,6 @@ app.use('/', router);
 // getting-started.js
 var uristring = process.env.MONGODB_URI;
 
-// The http server will listen to an appropriate port, or default to
-// port 5000.
-var theport = process.env.PORT || 5000;
 
 // Makes connection asynchronously.  Mongoose will queue up database
 // operations and release them when the connection is complete.
