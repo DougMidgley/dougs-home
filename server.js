@@ -74,6 +74,7 @@ app.post("/api/makeschema", function(req, res) {
         }
     });
     // upserts
+    console.log(settingsSchema);
     var settings = mongoose.model('settings', settingsSchema);
     console.log(settings);
     res.status(200).json(settings);
@@ -83,6 +84,8 @@ app.post("/api/makeschema", function(req, res) {
 app.post("/api/settings", function(req, res) {
     // retrieve the model 
     var settings = mongoose.model('settings');
+    console.log(settings);
+    
     //get req
     console.log(req.body);
     var newRecord = new settings(req.body);
