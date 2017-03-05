@@ -1,19 +1,84 @@
-<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>ExpressJS Static Boilerplate</title>
-	
-	<!-- STYLES -->
-	<link rel="stylesheet" href="stylesheets/app.min.css">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+   <![endif]-->
+   
+  </head>
+  <body>
+    <h1>
+      Welcome to Survey!
+    </h1>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label for="name" class="col-sm-2 control-label">
+        Name</label>
+ 
+        <div class="col-sm-6">
+          <input placeholder="Enter Name..." type="text" class="form-control">
+         
+        </div>
+      </div>
 
-	<!-- JS -->
-	<script src="javascripts/app.min.js"></script>
 
-</head>
-<body>
-
-	<h1>ExpressJS Static Boilerplate</h1>
-	
-</body>
+      <div class="form-group">
+        <label for="website" class="col-sm-2 control-label">
+        Development Languages...</label>
+ 
+        <div class="col-sm-6">
+          <label class="checkbox-inline">
+          <input type="checkbox" value="option1">
+          HTML </label> <label class="checkbox-inline"> <input type="checkbox" value="option2">
+          Javascript </label> <label class="checkbox-inline"> <input type="checkbox" value="option3">
+          CSS </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="how-hear" class="col-sm-2 control-label">
+        How did you hear...</label>
+ 
+        <div class="col-sm-6">
+          <label class="radio-inline">
+          <input name="howHear" type="radio" value="option1">
+          Retail </label> <label class="radio-inline"> <input name="howHear" type="radio" value="option2">
+          Phone Call </label> <label class="radio-inline"> <input name="howHear" type="radio" value="option3">
+          Website </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="city" class="col-sm-2 control-label">
+        City</label>
+ 
+        <div class="col-sm-6">
+          <select class="form-control">
+            <option>Seattle
+            <option>Redmond
+            <option>Lakewood
+            <option>Alderton
+          </select>
+         
+        </div>
+      </div>
+    </form>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+    <!---->
+    </script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/angular.min.js">
+    <!---->
+    </script>
+    <script src="js/bootstrap.min.js">
+    <!---->
+    </script>
+  </body>
 </html>
