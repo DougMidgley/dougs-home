@@ -22,6 +22,15 @@ router.get('/', function(req, res, next) {
     res.render('index.html');
 });
 
+
+//For avoidong Heroku $PORT error
+app.get('/', function(request, response) {
+    var result = 'App is running'
+    response.send(result);
+}).listen(port, function() {
+    console.log('App is running, server is listening on port ',port);
+});
+
 app.use('/', router);
 
 // Here we find an appropriate database to connect to, defaulting to
