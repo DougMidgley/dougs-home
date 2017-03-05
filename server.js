@@ -85,6 +85,7 @@ app.get("/api/contacts", function(req, res) {
 
 app.post("/api/contacts", function(req, res) {
   var newContact = req.body;
+  
 	console.log(JSON.stringify(req));
 
   if (!req.body.name) {
