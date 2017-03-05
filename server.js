@@ -72,6 +72,8 @@ app.delete("/api/contacts/:id", function(req, res) {
  */
 
 app.get("/api/contacts", function(req, res) {
+	console.log(req);
+	console.log(res);
   db.collection(CONTACTS_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get contacts.");
