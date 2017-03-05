@@ -87,7 +87,7 @@ app.post("/api/contacts", function(req, res) {
   var newContact = req.body;
 
   console.log('Request Body'); 
-  console.log(req.body);
+  console.log(req.body.name);
 
   if (!req.body.name) {
     handleError(res, "Invalid user input", "Must provide a name.", 400);
