@@ -126,7 +126,7 @@ app.get("/api/settings", function(req, res) {
     // retrieve the model 
     var settings = mongoose.model('settings');
     //get req
-     var query = settings.find({ name: 'Lux1'}, function(err, doc) {
+     var query = settings.find({ name: 'lux esp'}, function(err, doc) {
             if (err) throw err;
             console.log('doc');
             console.log(doc); 
