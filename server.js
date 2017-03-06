@@ -57,6 +57,32 @@ db.once('open', function() {
 */
 
 
+//always set sc
+
+    var settingsSchema = new mongoose.Schema({
+        name: {
+            type: String,
+            trim: true
+        },
+        sensor: {
+            type: String,
+            trim: true
+        },
+        frequency: {
+            type: Number,
+            min: 0
+        }
+    });
+    // upserts
+    console.log(settingsSchema);
+    var settings = new Schema;
+    settings.add(settingsSchema);
+    var settings = mongoose.model('settings', settingsSchema);
+    console.log(settings);
+    res.status(200).json(settings);
+//
+
+
 app.post("/api/makeschema", function(req, res) {
     // define schema
     var settingsSchema = new mongoose.Schema({
@@ -82,6 +108,8 @@ app.post("/api/makeschema", function(req, res) {
     res.status(200).json(settings);
 
 });
+
+
 
 app.post("/api/settings", function(req, res) {
     // retrieve the model 
