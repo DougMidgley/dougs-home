@@ -127,7 +127,12 @@ app.get("/api/settings", function(req, res) {
     var settings = mongoose.model('settings');
     console.log(settings);
     //get req
-    var query = settings.find({'name': 'Lux1'});
+     var query = settings.find({ name: 'Lux1'}, function(err, setting) {
+            if (err) throw err;
+            console.log(setting); 
+            res.send(setting);
+        });
+
     console.log(query);
 
 });
