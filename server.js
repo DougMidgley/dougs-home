@@ -112,13 +112,13 @@ app.post("/api/makeschema", function(req, res) {
 app.post("/api/settings", function(req, res) {
     // retrieve the model 
     var settings = mongoose.model('settings');
-    console.log(settings);
 
     //get req
     console.log(req.body);
     var newRecord = new settings(req.body);
     newRecord.save(function(err) {
-        if (err) console.log('Error on save!')
+        if (err) console.log('Error on save!');
+        res.send(newRecord);
     });
 });
 
