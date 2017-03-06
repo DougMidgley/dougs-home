@@ -77,7 +77,7 @@ db.once('open', function() {
     console.log(settingsSchema);
     var settings = mongoose.model('settings', settingsSchema);
     console.log(settings);
-    res.status(200).json(settings);
+
 //
 
 
