@@ -22,6 +22,9 @@ router.get('/', function(req, res, next) {
     res.render('index.html');
 });
 
+router.get('/graph', function(req, res, next) {
+    res.render('graph.html');
+});
 
 //For avoidong Heroku $PORT error
 app.get('/', function(request, response) {
@@ -74,9 +77,7 @@ db.once('open', function() {
         }
     });
     // upserts
-    console.log(settingsSchema);
     var settings = mongoose.model('settings', settingsSchema);
-    console.log(settings);
 
 //
 
