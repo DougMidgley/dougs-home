@@ -10,7 +10,7 @@ var express = require('express'),
 
 var SchemaName = "Settings";
 
-
+app.set('view engine', 'pug');
 app.use(express.static(__dirname + '/views')); // set the static files location for the static html
 app.use(express.static(__dirname + '/public')); // set the static files location /public/img will be /img for users
 app.use(morgan('dev')); // log every request to the console
@@ -118,7 +118,8 @@ app.post("/api/settings", function(req, res) {
     var newRecord = new settings(req.body);
     newRecord.save(function(err) {
         if (err) console.log('Error on save!');
-        res.send(newRecord);
+        res.render('Raw', { title: 'Heres your JSON Response', message: newRecord});
+        //res.send(newRecord);
     });
 });
 
@@ -130,8 +131,8 @@ app.get("/api/settings", function(req, res) {
             if (err) throw err;
             console.log('doc');
             console.log(doc); 
-
-            res.status(200).json(doc);
+            res.render('Raw', { title: 'Heres your JSON Response', message: doc});
+            //res.status(200).json(doc);
         });
 
 });
