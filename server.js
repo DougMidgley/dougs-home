@@ -26,6 +26,10 @@ router.get('/graph', function(req, res, next) {
     res.render('graph.html');
 });
 
+router.get('/jade', function(req, res, next) {
+    res.render('index', { title: 'OWKIN' });
+});
+
 //For avoidong Heroku $PORT error
 app.get('/', function(request, response) {
     var result = 'App is running'
