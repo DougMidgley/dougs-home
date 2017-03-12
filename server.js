@@ -28,6 +28,7 @@ router.get('/graph', function(req, res, next) {
 });
 
 router.get('/jade', function(req, res, next) {
+    console.log('pre-render');
     res.render('index', { title: 'OWKIN' });
 });
 
