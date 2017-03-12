@@ -29,7 +29,7 @@ router.get('/graph', function(req, res, next) {
 
 router.get('/jade', function(req, res, next) {
     console.log('pre-render');
-    res.render('index.html');
+    res.render('Raw', { title: 'OWKIN' });
 });
 
 //For avoidong Heroku $PORT error
