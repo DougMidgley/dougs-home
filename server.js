@@ -7,7 +7,7 @@ var express = require('express'),
     router = express.Router(),
     http = require('http'),
     mongoose = require('mongoose'),
-    chartist = require('node-chartist');
+    chartist = require('chartist');
 
 var SchemaName = "Settings";
 
