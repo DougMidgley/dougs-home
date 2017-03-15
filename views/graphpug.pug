@@ -9,8 +9,7 @@ html
       h1 My Site
       #mychart
       script.
-        console.log(#{data})
-        console.log(#{options})
-        console.log(#{responsiveOptions})
-        new Chartist.Line('#mychart', #{data}, #{options}, #{responsiveOptions});
-        	
+        console.log(JSON.#{data})
+        console.log(JSON.#{options})
+        console.log(JSON.#{responsiveOptions})
+        new Chartist.Line('#mychart', JSON.#{data}, JSON.#{options}, JSON.#{responsiveOptions});
