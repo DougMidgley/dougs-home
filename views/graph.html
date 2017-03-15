@@ -4,12 +4,17 @@
   <meta charset="utf-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-  <titleChartist template</title>
-  <link href='css/chartist.css' rel="stylesheet">
-  <script src='js/chartist.js'>
+  <title>Chartist template</title>
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script  src="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
   </script>
+
+</head>
+<body>
+  <h1>Here is the data</h1>
+<div class="ct-chart ct-golden-section" id="chart1"></div>
   <script>
-         var data = {
+var data = {
            labels: ['1', '2', '3', '4', '5', '6'],
            series: [
              {
@@ -42,11 +47,6 @@
              }
            }]
          ];
-  </script>
-</head>
-<body>
-  <h1>Here is the data</h1>
-  <canvas height="400" id="myChart" width="400"></canvas>
-  <script>new Chartist.Line('#myChart',data,options, responsiveOptions);</script>
+  new Chartist.Line('#chart1',data,options, responsiveOptions);</script>
 </body>
 </html>
