@@ -25,7 +25,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/graph', function(req, res, next) {
 
-  res.render('graphpug', {data:JSON.stringify(data), options: JSON.stringify(options), responsiveOptions: JSON.stringify(responsiveOptions) });
+  res.render('graph.html');
 });
 
 router.get('/jade', function(req, res, next) {
