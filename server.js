@@ -19,6 +19,15 @@ app.use(methodOverride()); // simulate DELETE and PUT
 app.use(bodyParser.json());
 
 
+//For avoidong Heroku $PORT error
+app.get('/', function(request, response) {
+    var result = 'App is running'
+    response.send(result);
+}).listen(port, function() {
+    console.log('App is running, server is listening on port ',port);
+});
+
+
 router.get('/', function(req, res, next) {
     res.render('index.html');
 });
@@ -33,13 +42,7 @@ router.get('/jade', function(req, res, next) {
     res.render('Raw', { title: 'OWKIN', scriptvariable: 'scriptvalue' });
 });
 
-//For avoidong Heroku $PORT error
-app.get('/', function(request, response) {
-    var result = 'App is running'
-    response.send(result);
-}).listen(port, function() {
-    console.log('App is running, server is listening on port ',port);
-});
+
 
 app.use('/', router);
 
