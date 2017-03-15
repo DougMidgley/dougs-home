@@ -30,7 +30,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/graph', function(req, res, next) {
-  res.render('graph.html');
+  res.sendFile('graph.html');
 });
 
 router.get('/jade', function(req, res, next) {
