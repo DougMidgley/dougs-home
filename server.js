@@ -18,6 +18,13 @@ app.use(bodyParser()); // pull information from html in POST
 app.use(methodOverride()); // simulate DELETE and PUT
 app.use(bodyParser.json());
 
+// Initialize the app.
+var server = app.listen(process.env.PORT || 8080, function () {
+  var port = server.address().port;
+  console.log("App now running on port", port);
+});
+
+
 router.get('/', function(req, res, next) {
     res.render('index.html');
 });
@@ -34,11 +41,6 @@ router.get('/jade', function(req, res, next) {
 app.use('/', router);
 
 
-// Initialize the app.
-var server = app.listen(process.env.PORT || 8080, function () {
-  var port = server.address().port;
-  console.log("App now running on port", port);
-});
 
 
 // Here we find an appropriate database to connect to, defaulting to
