@@ -7,11 +7,10 @@ html
   body
     header
       h1 My Site
-      #my-chart
-        .block
+      #mychart
       script.
-        console.log('data')
-        console.log('options')
-        console.log('responsiveOptions')
-        new Chartist.Line('#my-chart', data, options, responsiveOptions);
+        console.log(#{data})
+        console.log(#{options})
+        console.log(#{responsiveOptions})
+        new Chartist.Line('#mychart', #{data}, #{options}, #{responsiveOptions});
         	
