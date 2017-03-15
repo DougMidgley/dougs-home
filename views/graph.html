@@ -1,81 +1,52 @@
+<!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Bootstrap 101 Template</title>
-      <!-- Bootstrap -->
-      <link href="css/bootstrap.min.css" rel="stylesheet">
-      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-      <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]-->
-      <!--charts-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
-         <!---->
-      </script>
-      <script src="js/bootstrap.min.js">
-         <!---->
-      </script>
-          <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/angular.min.js">
-    <!---->
-    </script>
-        <script src='css/chartist.css'></script>
-        <script src='js/chartist.js'></script>
-      <script>  
-         /* Add a basic data series with six labels and values */
-  var data = {
-    labels: ['1', '2', '3', '4', '5', '6'],
-    series: [
-      {
-        data: [1, 2, 3, 5, 8, 13]
-      }
-    ]
-  };
-
-  /* Set some base options (settings will override the default settings in Chartist.js *see default settings*). We are adding a basic label interpolation function for the xAxis labels. */
-  var options = {
-    axisX: {
-      labelInterpolationFnc: function(value) {
-        return 'Calendar Week ' + value;
-      }
-    }
-  };
-
-  /* Now we can specify multiple responsive settings that will override the base settings based on order and if the media queries match. In this example we are changing the visibility of dots and lines as well as use different label interpolations for space reasons. */
-  var responsiveOptions = [
-    ['screen and (min-width: 641px) and (max-width: 1024px)', {
-      showPoint: false,
-      axisX: {
-        labelInterpolationFnc: function(value) {
-          return 'Week ' + value;
-        }
-      }
-    }],
-    ['screen and (max-width: 640px)', {
-      showLine: false,
-      axisX: {
-        labelInterpolationFnc: function(value) {
-          return 'W' + value;
-        }
-      }
-    }]
-  ];
-      </script>
-   </head>
-   <body>
-      <h1>
-         Here is the data
-      </h1>
-      <canvas id="myChart" width="400" height="400"></canvas>
-      <script>
-          new Chartist.Line('#mychart',data,options, responsiveOptions);
-      </script>
-
-   </body>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <titleChartist template</title>
+  <link href='css/chartist.css' rel="stylesheet">
+  <script src='js/chartist.js'>
+  </script>
+  <script>
+         var data = {
+           labels: ['1', '2', '3', '4', '5', '6'],
+           series: [
+             {
+               data: [1, 2, 3, 5, 8, 13]
+             }
+           ]
+         };
+         var options = {
+           axisX: {
+             labelInterpolationFnc: function(value) {
+               return 'Calendar Week ' + value;
+             }
+           }
+         };
+         var responsiveOptions = [
+           ['screen and (min-width: 641px) and (max-width: 1024px)', {
+             showPoint: false,
+             axisX: {
+               labelInterpolationFnc: function(value) {
+                 return 'Week ' + value;
+               }
+             }
+           }],
+           ['screen and (max-width: 640px)', {
+             showLine: false,
+             axisX: {
+               labelInterpolationFnc: function(value) {
+                 return 'W' + value;
+               }
+             }
+           }]
+         ];
+  </script>
+</head>
+<body>
+  <h1>Here is the data</h1>
+  <canvas height="400" id="myChart" width="400"></canvas>
+  <script>new Chartist.Line('#myChart',data,options, responsiveOptions);</script>
+</body>
 </html>
