@@ -18,20 +18,13 @@ app.use(bodyParser()); // pull information from html in POST
 app.use(methodOverride()); // simulate DELETE and PUT
 app.use(bodyParser.json());
 
-// Initialize the app.
-var server = app.listen(process.env.PORT || 8080, function () {
-  var port = server.address().port;
-  console.log("App now running on port", port);
-});
-
-
 router.get('/', function(req, res, next) {
     res.render('index.html');
 });
 
 
 router.get('/graph',function(req,res){
-  res.sendFile('graph.html', {"root": __dirname});
+  res.sendFile('/graph.html');
   //It will find and locate index.html from View or Scripts
 });
 
@@ -147,3 +140,7 @@ app.get("/api/settings", function(req, res) {
         });
 
 });
+
+app.listen(port);
+
+console.log("Running at Port " + port );
