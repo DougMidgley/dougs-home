@@ -20,9 +20,7 @@ app.use(bodyParser.json());
 
 router.get('/', function(req, res, next) {
     res.render('index.html');
-}).listen(app.get('port'), function() {
-    console.log('App is running, server is listening on port ', app.get('port'));
-});
+}).listen(process.env.PORT );
 
 router.get('/graph', function(req, res, next) {
   res.render('graph.html');
