@@ -26,6 +26,8 @@ router.get('/', function(req, res, next) {
 router.get('/graph', function(req, res, next) {
 
   res.render('graph.html');
+}).listen(port, function() {
+    console.log('App is running, server is listening on port ',port);
 });
 
 router.get('/jade', function(req, res, next) {
