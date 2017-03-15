@@ -18,22 +18,11 @@ app.use(bodyParser()); // pull information from html in POST
 app.use(methodOverride()); // simulate DELETE and PUT
 app.use(bodyParser.json());
 
-
-//For avoidong Heroku $PORT error
-app.get('/', function(request, response) {
-    var result = 'App is running'
-    response.send(result);
-}).listen(port, function() {
-    console.log('App is running, server is listening on port ',port);
-});
-
-
 router.get('/', function(req, res, next) {
     res.render('index.html');
 });
 
 router.get('/graph', function(req, res, next) {
-
   res.render('graph.html');
 });
 
@@ -41,8 +30,6 @@ router.get('/jade', function(req, res, next) {
     console.log('pre-render');
     res.render('Raw', { title: 'OWKIN', scriptvariable: 'scriptvalue' });
 });
-
-
 
 app.use('/', router);
 
@@ -146,4 +133,8 @@ app.get("/api/settings", function(req, res) {
             //res.status(200).json(doc);
         });
 
+});
+
+//keep at end
+app.listen(app.get('port'), function() {
 });
