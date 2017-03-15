@@ -62,7 +62,7 @@ router.get('/graph', function(req, res, next) {
       }
     }]
   ];
-  res.render('graphpug', {data:data, options: options, responsiveOptions: responsiveOptions });
+  res.render('graphpug', {data:JSON.stringify(data), options: JSON.stringify(options), responsiveOptions: JSON.stringify(responsiveOptions) });
 });
 
 router.get('/jade', function(req, res, next) {
