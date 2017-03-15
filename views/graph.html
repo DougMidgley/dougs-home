@@ -24,14 +24,6 @@
         <script src='css/chartist.css'></script>
         <script src='js/chartist.js'></script>
       <script>  
-         function httpGet(theUrl)
-         {
-            var xmlHttp = new XMLHttpRequest();
-            xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-            xmlHttp.send( null );
-            return xmlHttp.responseText;
-         }
-         
          /* Add a basic data series with six labels and values */
   var data = {
     labels: ['1', '2', '3', '4', '5', '6'],
