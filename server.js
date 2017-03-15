@@ -6,7 +6,8 @@ var express = require('express'),
     port = process.env.PORT || 3000,
     router = express.Router(),
     http = require('http'),
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'),
+    path = require("path");;
 
 var SchemaName = "Settings";
 
@@ -24,7 +25,7 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/graph',function(req,res){
-  res.sendFile('graph.html');
+  res.render('graph.html');
   //It will find and locate index.html from View or Scripts
 });
 
