@@ -6,8 +6,7 @@ var express = require('express'),
     port = process.env.PORT || 3000,
     router = express.Router(),
     http = require('http'),
-    mongoose = require('mongoose'),
-    chartist = require('chartist');
+    mongoose = require('mongoose');
 
 var SchemaName = "Settings";
 
