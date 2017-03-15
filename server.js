@@ -134,7 +134,3 @@ app.get("/api/settings", function(req, res) {
         });
 
 });
-
-//keep at end
-app.listen(app.get('port'), function() {
-});
