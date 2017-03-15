@@ -25,7 +25,7 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/graph',function(req,res){
-  res.render('graph.html');
+  res.render(__dirname + '/pubic/views/graph.html');
   //It will find and locate index.html from View or Scripts
 });
 
