@@ -152,7 +152,7 @@ app.post("/api/data", function(req, res) {
     var newRecord = new DataModel(req.body);
     newRecord.save(function(err) {
         if (err) console.log('Error on save!');
-        res.render('Raw', { title: 'Heres your JSON Response', message: newRecord});
+        res.status(200).json(newRecord)
     });
 });
 
