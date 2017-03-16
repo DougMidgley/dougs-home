@@ -95,6 +95,9 @@ db.once('open', function() {
       "type": "string",
       "trim": true
     },
+    "DateTime": {
+      "type": "Date"
+    },
     "value": {
       "type": "Number",
       "min": 0
