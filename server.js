@@ -85,12 +85,30 @@ db.once('open', function() {
 
 //
 
+//init data schema
+    var SchemaOject = new mongoose.Schema({
+    "sensorname": {
+      "type": "string",
+      "trim": true
+    },
+    "sensorunits": {
+      "type": "string",
+      "trim": true
+    },
+    "value": {
+      "type": "Number",
+      "min": 0
+    }
+  });
+  var DataModel = mongoose.model('Data', SchemaOject);
+
 
 app.post("/api/makeschema", function(req, res) {
     // define schema
     //var SchemaDefintion = new mongoose.Schema(req.body.schema);
     // upserts
     //console.log(SchemaDefintion);
+    var SchemaJs
     var SchemaOject = new mongoose.Schema(req.body.schema);
     //SchemaOject.add(SchemaDefintion);
     var ModelObject = mongoose.model(req.body.name, SchemaOject);
@@ -131,8 +149,7 @@ app.get("/api/settings", function(req, res) {
 
 /*POST Sensor Data*/ 
 app.post("/api/data", function(req, res) {
-    var model = mongoose.model('data');
-    var newRecord = new model(req.body);
+    var newRecord = new DataModel(req.body);
     newRecord.save(function(err) {
         if (err) console.log('Error on save!');
         res.render('Raw', { title: 'Heres your JSON Response', message: newRecord});
