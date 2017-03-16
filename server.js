@@ -88,14 +88,14 @@ db.once('open', function() {
 
 app.post("/api/makeschema", function(req, res) {
     // define schema
-    var settingsSchema = new mongoose.Schema(req.body.schema);
+    var SchemaDefintion = new mongoose.Schema(req.body.schema);
     // upserts
-    console.log(settingsSchema);
-    var settings = new Schema;
-    settings.add(settingsSchema);
-    var settings = mongoose.model(req.body.name, settingsSchema);
-    console.log(settings);
-    res.status(200).json(settings);
+    console.log(SchemaDefintion);
+    var SchemaOject = new Schema;
+    SchemaOject.add(SchemaDefintion);
+    var ModelObject = mongoose.model(req.body.name, SchemaDefintion);
+    console.log(ModelObject);
+    res.status(200).json(ModelObject);
 
 });
 
