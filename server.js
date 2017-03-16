@@ -142,6 +142,16 @@ app.get("/api/settings", function(req, res) {
 
 });
 
+/*POST Sensor Data*/ 
+app.post("/api/data", function(req, res) {
+    var model = mongoose.model('data');
+    var newRecord = new model(req.body);
+    newRecord.save(function(err) {
+        if (err) console.log('Error on save!');
+        res.status(200).json(newRecord);
+    });
+});
+
 app.listen(port);
 
 console.log("Running at Port " + port );
