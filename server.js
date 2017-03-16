@@ -91,7 +91,7 @@ app.post("/api/makeschema", function(req, res) {
     //var SchemaDefintion = new mongoose.Schema(req.body.schema);
     // upserts
     //console.log(SchemaDefintion);
-    var SchemaOject = new Schema(req.body.schema);
+    var SchemaOject = new mongoose.Schema(req.body.schema);
     //SchemaOject.add(SchemaDefintion);
     var ModelObject = mongoose.model(req.body.name, SchemaOject);
     console.log(ModelObject);
