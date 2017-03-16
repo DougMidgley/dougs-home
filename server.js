@@ -88,12 +88,12 @@ db.once('open', function() {
 
 app.post("/api/makeschema", function(req, res) {
     // define schema
-    var settingsSchema = new mongoose.Schema(req.body);
+    var settingsSchema = new mongoose.Schema(req.body.schema);
     // upserts
     console.log(settingsSchema);
     var settings = new Schema;
     settings.add(settingsSchema);
-    var settings = mongoose.model('settings', settingsSchema);
+    var settings = mongoose.model(req.body.name, settingsSchema);
     console.log(settings);
     res.status(200).json(settings);
 
