@@ -88,20 +88,7 @@ db.once('open', function() {
 
 app.post("/api/makeschema", function(req, res) {
     // define schema
-    var settingsSchema = new mongoose.Schema({
-        name: {
-            type: String,
-            trim: true
-        },
-        sensor: {
-            type: String,
-            trim: true
-        },
-        frequency: {
-            type: Number,
-            min: 0
-        }
-    });
+    var settingsSchema = new mongoose.Schema(req.body);
     // upserts
     console.log(settingsSchema);
     var settings = new Schema;
