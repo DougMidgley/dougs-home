@@ -7,7 +7,9 @@ var express = require('express'),
     router = express.Router(),
     http = require('http'),
     mongoose = require('mongoose'),
-    path = require("path");;
+    path = require("path"),
+    Model_Settings = require(./Model_Settings.js),
+    Model_Data = require(./Model_Data.js);
 
 var SchemaName = "Settings";
 
@@ -64,48 +66,9 @@ db.once('open', function() {
 */
 
 
-//always set sc
-
-    var settingsSchema = new mongoose.Schema({
-        name: {
-            type: String,
-            trim: true
-        },
-        sensor: {
-            type: String,
-            trim: true
-        },
-        frequency: {
-            type: Number,
-            min: 0
-        }
-    });
-    // upserts
-    var settings = mongoose.model('settings', settingsSchema);
-
-//
-
-//init data schema
-    var SchemaOject = new mongoose.Schema({
-    "sensorname": {
-      "type": "string",
-      "trim": true
-    },
-    "sensorunits": {
-      "type": "string",
-      "trim": true
-    },
-    "DateTime": {
-      "type": "Date"
-    },
-    "value": {
-      "type": "Number",
-      "min": 0
-    }
-  });
-  var DataModel = mongoose.model('Data', SchemaOject);
 
 
+/*
 app.post("/api/makeschema", function(req, res) {
     // define schema
     //var SchemaDefintion = new mongoose.Schema(req.body.schema);
@@ -118,7 +81,7 @@ app.post("/api/makeschema", function(req, res) {
     console.log(ModelObject);
     res.status(200).json(ModelObject);
 
-});
+});*/
 
 
 
@@ -152,7 +115,7 @@ app.get("/api/settings", function(req, res) {
 
 /*POST Sensor Data*/ 
 app.post("/api/data", function(req, res) {
-    var newRecord = new DataModel(req.body);
+    var newRecord = new Model_Data(req.body);
     newRecord.save(function(err) {
         if (err) console.log('Error on save!');
         res.status(200).json(newRecord)
