@@ -8,8 +8,8 @@ var express = require('express'),
     http = require('http'),
     mongoose = require('mongoose'),
     path = require("path"),
-    Model_Settings = require("./Model_Settings.js"),
-    Model_Data = require("./Model_Data.js");
+    Model_Settings = require("./Models/Model_Settings.js"),
+    Model_Data = require("./Models/Model_Data.js");
 
 var SchemaName = "Settings";
 
