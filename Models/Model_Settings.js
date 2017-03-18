@@ -1,3 +1,6 @@
+var mongoose = require('mongoose');
+
+
 //init data schema
     var SchemaOject = new mongoose.Schema({
         name: {
