@@ -17,7 +17,8 @@
   <script>
   $.ajax({
     url: "https://dougs-home.herokuapp.com/api/chartdata",
-    method: "GET"
+    method: "GET",
+    data:{}
     )
   .done(function(data) {
     console.log('success', data) 
