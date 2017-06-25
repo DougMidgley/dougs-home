@@ -10,7 +10,7 @@ var express = require('express'),
     path = require("path"),
     Model_Settings = require("./Models/Model_Settings.js"),
     Model_Data = require("./Models/Model_Data.js"),
-    cron = require('node-cron');;
+    cron = require('node-cron');
 
 var SchemaName = "Settings";
 
@@ -24,6 +24,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+app.use(require('./routes'));
 
 router.get('/', function(req, res, next) {
     res.render('index.html');
@@ -196,9 +197,11 @@ app.listen(port);
 
 console.log("Running at Port " + port );
 
+console.log(controllerfunction());
+
 //cronjob
 
 cron.schedule('* * * * *', function(){
   console.log('running a task every minute');
-  
+
 });
