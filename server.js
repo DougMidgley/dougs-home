@@ -20,7 +20,9 @@ app.use(morgan('dev')); // log every request to the console
 app.use(bodyParser()); // pull information from html in POST
 app.use(methodOverride()); // simulate DELETE and PUT
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 router.get('/', function(req, res, next) {
     res.render('index.html');
