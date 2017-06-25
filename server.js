@@ -115,8 +115,8 @@ app.get("/api/settings", function(req, res) {
             if (err) throw err;
             console.log('doc');
             console.log(doc); 
-            res.render('Raw', { title: 'Heres your JSON Response', message: doc});
-            //res.status(200).json(doc);
+            //res.render('Raw', { title: 'Heres your JSON Response', message: doc});
+            res.status(200).json(doc);
         });
 
 });
