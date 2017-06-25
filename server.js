@@ -180,6 +180,7 @@ function parsemongodata(doc){
 /*POST Sensor Data*/ 
 app.post("/api/data", function(req, res) {
     var newRecord = new Model_Data(req.body);
+    console.log(newRecord);
     newRecord.save(function(err) {
         if (err) console.log('Error on save!');
         res.status(200).json(newRecord)
