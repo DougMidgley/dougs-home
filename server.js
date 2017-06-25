@@ -162,7 +162,7 @@ app.get("/api/chartdata", function(req, res) {
 });
 
 function parsemongodata(doc){
-    console.log(doc.length).
+    console.log(doc.length);
     for (i = 0, i<doc.length, i++) {
         console.log(i);
     }
