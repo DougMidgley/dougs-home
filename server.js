@@ -105,7 +105,8 @@ app.get("/api/settings", function(req, res) {
     var filtervalue = "";
     if(req.body !== 'undefined' ){
         //filtervalue = req.body; 
-        console.log(req);
+        console.log(req.query.name);
+        filtervalue = req.query.name;
     }
 
     // retrieve the model 
