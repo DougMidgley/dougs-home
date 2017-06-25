@@ -9,7 +9,8 @@ var express = require('express'),
     mongoose = require('mongoose'),
     path = require("path"),
     Model_Settings = require("./Models/Model_Settings.js"),
-    Model_Data = require("./Models/Model_Data.js");
+    Model_Data = require("./Models/Model_Data.js"),
+    cron = require('node-cron');;
 
 var SchemaName = "Settings";
 
@@ -194,3 +195,10 @@ app.post("/api/data", function(req, res) {
 app.listen(port);
 
 console.log("Running at Port " + port );
+
+//cronjob
+
+cron.schedule('* * * * *', function(){
+  console.log('running a task every minute');
+  
+});
