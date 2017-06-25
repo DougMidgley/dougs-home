@@ -102,10 +102,13 @@ app.post("/api/settings", function(req, res) {
 });
 
 app.get("/api/settings", function(req, res) {
+    var filtervalue = "";
+    if(req.body !== 'undefined' ){
+        filtervalue = req.body; 
+    }
     // retrieve the model 
-    //var settings = mongoose.model('settings');
     //get req
-     var query = Model_Settings.find({ name: 'lux esp'}, function(err, doc) {
+     var query = Model_Settings.find({ name: filtervalue}, function(err, doc) {
             if (err) throw err;
             console.log('doc');
             console.log(doc); 
