@@ -103,7 +103,7 @@ app.post("/api/settings", function(req, res) {
 
 app.get("/api/settings", function(req, res) {
     // retrieve the model 
-    var settings = mongoose.model('settings');
+    //var settings = mongoose.model('settings');
     //get req
      var query = Model_Settings.find({ name: 'lux esp'}, function(err, doc) {
             if (err) throw err;
