@@ -21,8 +21,8 @@
     )
   .done(function(data) {
     console.log('success', data) 
-    console.log(data.keys());
-    console.log(data.values());
+    console.log(Object.keys(data));
+    console.log(Object.values(data));
   })
   .fail(function(xhr) {
     console.log('error', xhr);
