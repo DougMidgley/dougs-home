@@ -31,7 +31,7 @@ var data = {
              }
            ]
          };
-var options =   seriesBarDistance: 10,
+var options = {seriesBarDistance: 10,
   axisX: {
     offset: 60
   },
@@ -41,7 +41,7 @@ var options =   seriesBarDistance: 10,
       return value
     },
     scaleMinSpace: 15
-  };
+  }};
   new Chartist.Bar('#chart1',data,options);
   })
   .fail(function(xhr) {
