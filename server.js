@@ -140,6 +140,34 @@ app.get("/api/data", function(req, res) {
 
 });
 
+app.get("/api/chartdata", function(req, res) {
+    var filtervalue = "";
+    if(req.body !== 'undefined' ){
+        //filtervalue = req.body; 
+        console.log(req.query);
+        filtervalue = req.query;
+    }
+
+    // retrieve the model 
+    //get req
+     var query = Model_Data.find(filtervalue, function(err, doc) {
+            if (err) throw err;
+            console.log('doc');
+            console.log(doc); 
+            //res.render('Raw', { title: 'Heres your JSON Response', message: doc});
+            parsemongodata(doc);
+            res.status(200).json(doc);
+        });
+
+});
+
+function parsemongodata(doc){
+    console.log(doc.length).
+    for (var i = 0, i<doc.length, i++){
+        console.log(i);
+    }
+}
+
 
 /*POST Sensor Data*/ 
 app.post("/api/data", function(req, res) {
