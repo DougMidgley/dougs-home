@@ -142,7 +142,7 @@ app.get("/api/data", function(req, res) {
 
 app.get("/api/chartdata", function(req, res) {
     var filtervalue = "";
-    if(req.body !== 'undefined' ){
+    if(req.query !== 'undefined' ){
         //filtervalue = req.body; 
         console.log(req.query);
         filtervalue = req.query;
@@ -163,7 +163,7 @@ app.get("/api/chartdata", function(req, res) {
 
 function parsemongodata(doc){
     console.log(doc.length);
-    for (i = 0, i<doc.length, i++) {
+    for (i = 0; i<doc.length;i++) {
         console.log(i);
     }
 }
