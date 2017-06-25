@@ -104,8 +104,10 @@ app.post("/api/settings", function(req, res) {
 app.get("/api/settings", function(req, res) {
     var filtervalue = "";
     if(req.body !== 'undefined' ){
-        filtervalue = req.body; 
+        //filtervalue = req.body; 
+        console.log(req);
     }
+
     // retrieve the model 
     //get req
      var query = Model_Settings.find({ name: filtervalue}, function(err, doc) {
