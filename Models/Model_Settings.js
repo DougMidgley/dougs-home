@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-
+console.log("loading Settings");
 
 //init data schema
     var SchemaOject = new mongoose.Schema({
