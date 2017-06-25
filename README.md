@@ -45,3 +45,5 @@ Michael Lancaster
 License
 -----------
 MIT
+
+git add . && git commit -m "something" && git push heroku master && heroku logs --tail
