@@ -155,8 +155,8 @@ app.get("/api/chartdata", function(req, res) {
             console.log('doc');
             console.log(doc); 
             //res.render('Raw', { title: 'Heres your JSON Response', message: doc});
-            parsemongodata(doc);
-            res.status(200).json(doc);
+            var parseddata = parsemongodata(doc);
+            res.status(200).json(parseddata);
         });
 
 });
@@ -171,9 +171,9 @@ function parsemongodata(doc){
         } else {
             data[sensor] = doc[i].value;
         }
-        console.log(i);
-        console.log(data);
     }
+    console.log(data);
+    return data;
 }
 
 
