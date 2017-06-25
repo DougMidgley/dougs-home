@@ -163,8 +163,16 @@ app.get("/api/chartdata", function(req, res) {
 
 function parsemongodata(doc){
     console.log(doc.length);
+    var data= {};
     for (i = 0; i<doc.length;i++) {
+        var sensor = doc[i].sensorname;
+        if (data[sensor]){
+            data[sensor] = data[sensor] + doc[i].value;
+        } else {
+            data[sensor] = doc[i].value;
+        }
         console.log(i);
+        console.log(data);
     }
 }
 
