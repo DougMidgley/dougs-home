@@ -38,25 +38,7 @@ var data = {
              }
            }
          };
-         var responsiveOptions = [
-           ['screen and (min-width: 641px) and (max-width: 1024px)', {
-             showPoint: false,
-             axisX: {
-               labelInterpolationFnc: function(value) {
-                 return 'Sensor Name';
-               }
-             }
-           }],
-           ['screen and (max-width: 640px)', {
-             showLine: false,
-             axisX: {
-               labelInterpolationFnc: function(value) {
-                 return 'W' + value;
-               }
-             }
-           }]
-         ];
-  new Chartist.Line('#chart1',data,options, responsiveOptions);
+  new Chartist.Line('#chart1',data,options);
   })
   .fail(function(xhr) {
     console.log('error', xhr);
