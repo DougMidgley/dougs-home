@@ -1,8 +1,8 @@
 var mongoose = require('mongoose'),
 	router = require('express').Router(),
 	request = require('request'),
-    Model_Settings = require("./Models/Model_Settings.js"),
-    Model_Data = require("./Models/Model_Data.js");
+    Model_Settings = require("../Models/Model_Settings.js"),
+    Model_Data = require("../Models/Model_Data.js");
 
 console.log('settings loaded');
 
