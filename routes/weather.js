@@ -6,3 +6,4 @@ router.get("/weather", function(req, res) {
 	console.log("weather"); 
 
 });
+module.exports = router;
