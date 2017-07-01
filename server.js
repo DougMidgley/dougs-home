@@ -91,87 +91,16 @@ app.post("/api/makeschema", function(req, res) {
 
 
 
-app.post("/api/settings", function(req, res) {
-    // retrieve the model 
-    var settings = mongoose.model('settings');
-
-    //get req
-    console.log(req.body);
-    var newRecord = new settings(req.body);
-    newRecord.save(function(err) {
-        if (err) console.log('Error on save!');
-        res.render('Raw', { title: 'Heres your JSON Response', message: newRecord});
-        //res.send(newRecord);
-    });
-});
-
-app.get("/api/data", function(req, res) {
-    var filtervalue = "";
-    if(req.body !== 'undefined' ){
-        //filtervalue = req.body; 
-        console.log(req.query);
-        filtervalue = req.query;
-    }
-
-    // retrieve the model 
-    //get req
-     var query = Model_Data.find(filtervalue, function(err, doc) {
-            if (err) throw err;
-            console.log('doc');
-            console.log(doc); 
-            //res.render('Raw', { title: 'Heres your JSON Response', message: doc});
-            res.status(200).json(doc);
-        });
-
-});
-
-app.get("/api/chartdata", function(req, res) {
-    var filtervalue = "";
-    if(req.query !== 'undefined' ){
-        //filtervalue = req.body; 
-        console.log(req.query);
-        filtervalue = req.query;
-    }
-
-    // retrieve the model 
-    //get req
-     var query = Model_Data.find(filtervalue, function(err, doc) {
-            if (err) throw err;
-            console.log('doc');
-            console.log(doc); 
-            //res.render('Raw', { title: 'Heres your JSON Response', message: doc});
-            var parseddata = parsemongodata(doc);
-            res.status(200).json(parseddata);
-        });
-
-});
-
-function parsemongodata(doc){
-    console.log(doc.length);
-    var data= {};
-    for (i = 0; i<doc.length;i++) {
-        var sensor = doc[i].sensorname;
-        if (data[sensor]){
-            data[sensor] = data[sensor] + doc[i].value;
-        } else {
-            data[sensor] = doc[i].value;
-        }
-    }
-    console.log(data);
-    return data;
-}
 
 
-/*POST Sensor Data*/ 
-app.post("/api/data", function(req, res) {
-    console.log(req);
-    var newRecord = new Model_Data(req.body);
-    console.log(newRecord);
-    newRecord.save(function(err) {
-        if (err) console.log('Error on save!');
-        res.status(200).json(newRecord)
-    });
-});
+
+
+
+
+
+
+
+
 
 app.listen(port);
 
