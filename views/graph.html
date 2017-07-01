@@ -14,7 +14,12 @@
 </head>
 <body>
   <h1>Here is the data</h1>
-<div class="ct-chart ct-golden-section" id="chart1"></div>
+
+<div class="row">
+  <div class="col-md-8"><div class="ct-chart ct-golden-section" id="chart1"></div></div>
+  <div class="col-md-4">4</div>
+</div>
+
   <script>
   $.ajax({
     url: "https://dougs-home.herokuapp.com/api/chartdata",
