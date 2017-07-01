@@ -6,6 +6,7 @@ console.log('settings loaded');
 
 router.get("/settings", function(req, res) {
 	console.log("get settings"); 
+	res.status(200).json('settinghere');
 
 });
 module.exports = router;
