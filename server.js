@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(require('./routes'));
-app.use(require('./controller'));
+var a = require('./controller'));
 
 router.get('/', function(req, res, next) {
     res.render('index.html');
@@ -198,7 +198,7 @@ app.listen(port);
 
 console.log("Running at Port " + port );
 
-console.log(controllerfunction());
+console.log(a.controllerfunction());
 
 //cronjob
 
