@@ -25,6 +25,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(require('./routes'));
+app.use(require('./controller'));
 
 router.get('/', function(req, res, next) {
     res.render('index.html');
