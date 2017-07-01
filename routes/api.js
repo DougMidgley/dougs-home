@@ -60,7 +60,7 @@ router.get("/data", function(req, res) {
 });
 
 /*POST Sensor Data*/ 
-app.post("/data", function(req, res) {
+router.post("/data", function(req, res) {
     console.log(req);
     var newRecord = new Model_Data(req.body);
     console.log(newRecord);
