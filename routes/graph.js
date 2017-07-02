@@ -58,6 +58,7 @@ router.get("/timeseries", function(req, res) {
             console.log(doc); 
             //res.render('Raw', { title: 'Heres your JSON Response', message: doc});
             var parseddata = parsefortimeseries(doc);
+            console.log(parseddata);
             res.status(200).json(parseddata);
         });
 
@@ -82,6 +83,7 @@ function parsefortimeseries(doc){
         }
         
     }
+    console.log("end of function");
     return data;
 }
 
