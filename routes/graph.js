@@ -77,9 +77,9 @@ function parsefortimeseries(doc){
             return d.sensorname == "temp" && d.DateTime != null;
         })
         body.data = [];
-        console.log(filteredObjects);
         for (ii = 0; ii<filteredObjects.length;ii++){
             body.data[ii] = {x: new Date(143134652600 + ii), y: ii};
+            console.log(body);
         }
         
     }
