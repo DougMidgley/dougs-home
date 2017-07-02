@@ -30,15 +30,15 @@
     console.log('success', data) 
     console.log(Object.keys(data));
     console.log(Object.values(data));
-var options = {
-  axisX: {
-    type: Chartist.FixedScaleAxis,
-    divisor: 5,
-    labelInterpolationFnc: function(value) {
-      return moment(value).format('MMM D');
-    }
-  }
-};
+    var options = {
+      axisX: {
+        type: Chartist.FixedScaleAxis,
+        divisor: 5,
+        labelInterpolationFnc: function(value) {
+          return moment(value).format('MMM D');
+        }
+      }
+    };
   new Chartist.Bar('#chart1',data,options);
   })
   .fail(function(xhr) {
