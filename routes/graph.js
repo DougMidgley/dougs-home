@@ -74,7 +74,7 @@ function parsefortimeseries(doc){
         var body = new Object();
         body.name = uniquesensors[i];
         var filteredObjects = doc.filter(function(d){
-            return d.sensorname == "temp" && d.DateTime != null;
+            return d.sensorname == uniquesensors[i] && d.DateTime != null;
         })
         body.data = [];
         for (ii = 0; ii<filteredObjects.length;ii++){
