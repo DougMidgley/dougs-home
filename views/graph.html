@@ -30,34 +30,7 @@
     console.log('success', data) 
     console.log(Object.keys(data));
     console.log(Object.values(data));
-var data = {
-           labels: Object.keys(data),
-           series: [
-             {
-               data: Object.values(data)
-             }
-           ]
-         };
-var options = {seriesBarDistance: 10,
-  axisX: {
-    offset: 60
-  },
-  axisY: {
-    offset: 80,
-    labelInterpolationFnc: function(value) {
-      return value
-    },
-    scaleMinSpace: 15
-  }};
-  new Chartist.Bar('#chart1',data,options);
-  })
-  .fail(function(xhr) {
-    console.log('error', xhr);
-  });
-
-</script>
-
-var chart = new Chartist.Line('.ct-chart', datafrompi, {
+var options = {
   axisX: {
     type: Chartist.FixedScaleAxis,
     divisor: 5,
@@ -65,8 +38,14 @@ var chart = new Chartist.Line('.ct-chart', datafrompi, {
       return moment(value).format('MMM D');
     }
   }
-});
+};
+  new Chartist.Bar('#chart1',data,options);
+  })
+  .fail(function(xhr) {
+    console.log('error', xhr);
+  });
 
+</script>
 
 </body>
 </html>
