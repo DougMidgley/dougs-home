@@ -72,11 +72,11 @@ function parsefortimeseries(doc){
     var uniquesensors = allsensors.filter((x, i, a) => a.indexOf(x) == i);
 
     for (i = 0; i<uniquesensors.length;i++){
-        body.name = uniquesensors[i];
+        body[i].name = uniquesensors[i];
         var filteredObjects = doc.filter(function(d){
             return d.sensorname == "temp" && d.DateTime != null;
         })
-        body.data = [];
+        body[i].data = [];
         for (ii = 0; ii<filteredObjects.length;ii++){
             body.data[ii] = {x: new Date(143134652600 + ii), y: ii};
             console.log(body);
