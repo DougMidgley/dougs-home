@@ -4,25 +4,7 @@ var mongoose = require('mongoose'),
     Model_Settings = require("../Models/Model_Settings.js"),
     Model_Data = require("../Models/Model_Data.js");
 
-console.log('settings loaded');
-
-{
-  series: [
-    {
-      name: 'series-1',
-      data: [
-        {x: new Date(143134652600), y: 53},
-        {x: new Date(143234652600), y: 40},
-        {x: new Date(143340052600), y: 45},
-        {x: new Date(143366652600), y: 40},
-        {x: new Date(143410652600), y: 20},
-        {x: new Date(143508652600), y: 32},
-        {x: new Date(143569652600), y: 18},
-        {x: new Date(143579652600), y: 11}
-      ]
-    }
-  ]
-}
+console.log('graph loaded');
 
 router.get("/chartdata", function(req, res) {
     var filtervalue = "";
@@ -93,6 +75,7 @@ function parsefortimeseries(doc){
         var filteredObjects = doc.filter(function(d){
             return d.sensorname == "temp" && d.DateTime != null;
         })
+        body.data = [];
         console.log(filteredObjects);
         for (ii = 0; ii<filteredObjects.length;i++){
             body.data[ii] = {x: new Date(143134652600 + ii), y: ii};
