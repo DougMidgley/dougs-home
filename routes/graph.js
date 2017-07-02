@@ -84,24 +84,23 @@ router.get("/timeseries", function(req, res) {
 function parsefortimeseries(doc){
     console.log(doc.length);
     var data= {series: []};
+    var body= data.series;
     var allsensors = doc.map(function(a) {return a.sensorname;});
     console.log(allsensors);
     var uniquesensors = allsensors.filter((x, i, a) => a.indexOf(x) == i);
     console.log(uniquesensors);
-    var filteredObjects = doc.filter(function(d){
-    return d.sensorname == "temp";
-    })
-    console.log(filteredObjects);
 
-    for (i = 0; i<filteredObjects.length;i++) {
-        var sensor = filteredObjects[i].sensorname;
-        if (data[sensor]){
-            data[sensor] = data[sensor] + doc[i].value;
-        } else {
-            data[sensor] = doc[i].value;
+    for (i = 0; i<uniquesensors.length;i++){
+        body.name = uniquesensors[i];
+        var filteredObjects = doc.filter(function(d){
+            return d.sensorname == "temp" && d.DateTime != null;
+        })
+        console.log(filteredObjects);
+        for (ii = 0; ii<filteredObjects.length;i++){
+            body.data.push({x: new Date(143134652600 + i), y: i},)
         }
+        
     }
-    console.log(data);
     return data;
 }
 
