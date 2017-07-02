@@ -86,9 +86,7 @@ function parsefortimeseries(doc){
     var data= {series: []};
     var body= data.series;
     var allsensors = doc.map(function(a) {return a.sensorname;});
-    console.log(allsensors);
     var uniquesensors = allsensors.filter((x, i, a) => a.indexOf(x) == i);
-    console.log(uniquesensors);
 
     for (i = 0; i<uniquesensors.length;i++){
         body.name = uniquesensors[i];
@@ -97,7 +95,7 @@ function parsefortimeseries(doc){
         })
         console.log(filteredObjects);
         for (ii = 0; ii<filteredObjects.length;i++){
-            body.data.push({x: new Date(143134652600 + i), y: i});
+            body.data[ii] = {x: new Date(143134652600 + ii), y: ii};
         }
         
     }
