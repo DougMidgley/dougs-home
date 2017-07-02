@@ -11,7 +11,8 @@ var mongoose = require('mongoose');
       "trim": true
     },
     "DateTime": {
-      "type": "Date"
+      "type": "Date",
+      "default": Date.now
     },
     "value": {
       "type": "Number",
