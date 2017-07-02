@@ -78,7 +78,7 @@ function parsefortimeseries(doc){
         })
         body.data = [];
         console.log(filteredObjects);
-        for (ii = 0; ii<filteredObjects.length;i++){
+        for (ii = 0; ii<filteredObjects.length;ii++){
             body.data[ii] = {x: new Date(143134652600 + ii), y: ii};
         }
         
