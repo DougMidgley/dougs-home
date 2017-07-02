@@ -85,11 +85,13 @@ function parsefortimeseries(doc){
     console.log(doc.length);
     var data= {series: []};
     var allsensors = doc.map(function(a) {return a.sensorname;});
+    console.log(allsensors);
     var uniquesensors = allsensors.filter((x, i, a) => a.indexOf(x) == i);
-
+    console.log(uniquesensors);
     var filteredObjects = doc.filter(function(d){
     return d.sensorname == "temp";
     })
+    console.log(filteredObjects);
 
     for (i = 0; i<filteredObjects.length;i++) {
         var sensor = filteredObjects[i].sensorname;
