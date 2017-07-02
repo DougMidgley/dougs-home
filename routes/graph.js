@@ -74,8 +74,9 @@ function parsefortimeseries(doc){
         var body = new Object();
         body.name = uniquesensors[i];
         var filteredObjects = doc.filter(function(d){
+            console.log(d.DateTime );
             return d.sensorname == body.name && d.DateTime !== 'undefined';
-        })
+        });
         body.data = [];
         for (ii = 0; ii<filteredObjects.length;ii++){
             body.data[ii] = {x: new Date(143134652600 + ii), y: ii};
