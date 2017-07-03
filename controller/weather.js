@@ -1,6 +1,6 @@
 // contents of utils.js
 var TempConvert = require('temp-units-conv');
-var request = require('request');
+var request = require('http');
 module.exports = {
   getweather: function() {
   	var apikey = process.env.openweatherkey;
@@ -21,7 +21,7 @@ module.exports = {
 			return SensorObject;
     });
     res.on('error', function(err) {
-    console.log(err);
+    console.log(err)
   })
 
 });
