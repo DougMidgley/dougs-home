@@ -107,7 +107,7 @@ app.listen(port);
 
 console.log("Running at Port " + port );
 
-console.log(cronhelper.runJobs());
+console.log(c.runJobs());
 
 //cronjob
 
