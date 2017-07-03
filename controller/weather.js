@@ -1,6 +1,6 @@
 // contents of utils.js
 var TempConvert = require('temp-units-conv');
-var request = require('http');
+var request = require('request');
 var index = require('./index.js');
 module.exports = {
   getweather: function() {
