@@ -20,7 +20,7 @@ module.exports = {
     res.on('error', function(err) {
     console.log(err)
   });
-    res.on('end'){
+    res.on('end', function(chunk){
     		console.log("Start Parsing Data");
     		var parsedjson = JSON.parse(JSONString);
     		console.log(parsedjson.list[0]);
@@ -32,7 +32,7 @@ module.exports = {
 		    	DateTime: currentweather.dt};
 		    console.log("Parse Finish");
 			index.PostToMongoDB(SensorObject);
-    }
+    });
 
 });
 	
