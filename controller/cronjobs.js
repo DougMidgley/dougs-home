@@ -1,3 +1,6 @@
+var cron = require('node-cron');
+
+
 module.exports = {
   runJobs: function() {
 	cron.schedule('* * * * *', function(){

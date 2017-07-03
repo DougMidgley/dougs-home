@@ -8,7 +8,7 @@ var express = require('express'),
     http = require('http'),
     mongoose = require('mongoose'),
     path = require("path"),
-    cron = require('node-cron');
+    
 
 var SchemaName = "Settings";
 
@@ -24,6 +24,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(require('./routes'));
 var c = require('./controller');
+//var cronhelper = require('./controller/cronjobs.js')
 
 router.get('/', function(req, res, next) {
     res.render('index.html');
@@ -106,7 +107,7 @@ app.listen(port);
 
 console.log("Running at Port " + port );
 
-console.log(c.runJobs());
+console.log(cronhelper.runJobs());
 
 //cronjob
 
