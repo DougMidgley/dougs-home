@@ -1,5 +1,6 @@
 // contents of utils.js
 var TempConvert = require('temp-units-conv');
+var $ = require('jquery');
 module.exports = {
   getweather: function() {
   	var apikey = process.env.openweatherkey;
