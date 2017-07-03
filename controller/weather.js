@@ -10,9 +10,19 @@ module.exports = {
 
   	request.get(url, function(res){
     res.setEncoding('utf8');
-    res.on('end', function(data){
+    var JSONString;
+    var i = 0;
+    res.on('data', function(chunk){
+    	console.log("chunk " + i)
+    	i++
+    	JSONString = JSONString + chunk;
+    });
+    res.on('error', function(err) {
+    console.log(err)
+  });
+    res.on('end'){
     		console.log("Start Parsing Data");
-    		var parsedjson = JSON.parse(data);
+    		var parsedjson = JSON.parse(JSONString);
     		console.log(parsedjson.list[0]);
 		    var currentweather = parsedjson.list[0];
 		    var SensorObject = {
@@ -22,10 +32,7 @@ module.exports = {
 		    	DateTime: currentweather.dt};
 		    console.log("Parse Finish");
 			index.PostToMongoDB(SensorObject);
-    });
-    res.on('error', function(err) {
-    console.log(err)
-  })
+    }
 
 });
 	
