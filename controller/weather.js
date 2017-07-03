@@ -10,9 +10,12 @@ module.exports = {
   	request.get(url, function(res){
     res.setEncoding('utf8');
     res.on('data', function(data){
+    	console.log("parsed body");
     		var jsonbody = JSON.parse(data);
         		console.log(jsonbody);
 		    var currentweather = jsonbody.list[0];
+		    console.log("jsonbody.list[0]");
+		    console.log(currentweather);
 		    var SensorObject = {
 		    	sensorname: "Current Temperature", 
 		    	sensorunits: "Celcius", 
