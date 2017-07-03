@@ -11,7 +11,9 @@ module.exports = {
     res.setEncoding('utf8');
     res.on('data', function(data){
     		console.log("Start Parsing Data");
-		    var currentweather = JSON.parse(data).list[0];
+    		var parsedjson = JSON.parse(data);
+    		console.log(parsedjson);
+		    var currentweather = parsedjson.list[0];
 		    var SensorObject = {
 		    	sensorname: "Current Temperature", 
 		    	sensorunits: "Celcius", 
