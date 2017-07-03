@@ -10,12 +10,14 @@ module.exports = {
   	request.get(url, function(res){
     res.setEncoding('utf8');
     res.on('data', function(data){
+    		console.log("Start Parsing Data");
 		    var currentweather = JSON.parse(data).list[0];
 		    var SensorObject = {
 		    	sensorname: "Current Temperature", 
 		    	sensorunits: "Celcius", 
 		    	value: TempConvert.k2c(currentweather.main.temp), 
 		    	DateTime: currentweather.dt};
+		    console.log("Parse Finish");
 			return SensorObject;
     });
     res.on('error', function(err) {
