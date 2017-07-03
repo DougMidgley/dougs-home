@@ -12,7 +12,7 @@ module.exports = {
     res.on('data', function(data){
     		console.log("Start Parsing Data");
     		var parsedjson = JSON.parse(data);
-    		console.log(parsedjson);
+    		console.log(parsedjson.list);
 		    var currentweather = parsedjson.list[0];
 		    var SensorObject = {
 		    	sensorname: "Current Temperature", 
