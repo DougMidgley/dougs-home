@@ -106,11 +106,7 @@ app.listen(port);
 
 console.log("Running at Port " + port );
 
-console.log(c.controllerfunction());
+console.log(c.runjobs());
 
 //cronjob
 
-cron.schedule('* * * * *', function(){
-  console.log('running a task every minute');
-
-});
