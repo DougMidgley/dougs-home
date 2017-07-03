@@ -6,7 +6,7 @@ module.exports = {
     console.log(newRecord);
     newRecord.save(function(err) {
         if (err) console.log('Error on save!');
-        res.status(200).json(newRecord)
+        else console.log('saved');
     });
   }
 }
