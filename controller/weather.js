@@ -1,6 +1,7 @@
 // contents of utils.js
 var TempConvert = require('temp-units-conv');
 var request = require('http');
+var index = require('./index.js');
 module.exports = {
   getweather: function() {
   	var apikey = process.env.openweatherkey;
@@ -20,7 +21,7 @@ module.exports = {
 		    	value: TempConvert.k2c(currentweather.main.temp), 
 		    	DateTime: currentweather.dt};
 		    console.log("Parse Finish");
-			return SensorObject;
+			index.PostToMongoDB(SensorObject);
     });
     res.on('error', function(err) {
     console.log(err)
