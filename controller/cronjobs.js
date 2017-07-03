@@ -1,5 +1,5 @@
 var cron = require('node-cron');
-var weather = require('./controller/weather.js');
+var weather = require('weather.js');
 
 
 module.exports = {

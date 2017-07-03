@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({
 app.use(require('./routes'));
 var c = require('./controller');
 var cronhelper = require('./controller/cronjobs.js');
-var weather = require('./controller/weather.js');
+
 
 router.get('/', function(req, res, next) {
     res.render('index.html');
