@@ -19,7 +19,7 @@ request(options, function(error, response, body){
     } 
     else {
 		console.log("Start Parsing Data");
-		var parsedjson = JSON.parse(body);
+		var parsedjson = body;// JSON.parse(body);
 		console.log(parsedjson.list[0]);
 	    var currentweather = parsedjson.list[0];
 	    var SensorObject = {
