@@ -3,6 +3,7 @@ var mongoose = require('mongoose'),
 	request = require('request'),
     Model_Settings = require("../Models/Model_Settings.js"),
     Model_Data = require("../Models/Model_Data.js");
+    index = require("../controller/index.js");
 
 console.log('settings loaded');
 
@@ -62,12 +63,7 @@ router.get("/data", function(req, res) {
 /*POST Sensor Data*/ 
 router.post("/data", function(req, res) {
     console.log(req);
-    var newRecord = new Model_Data(req.body);
-    console.log(newRecord);
-    newRecord.save(function(err) {
-        if (err) console.log('Error on save!');
-        res.status(200).json(newRecord)
-    });
+    index.PostToMongoDB(req.body);
 });
 
 router.get("/chartdata", function(req, res) {
