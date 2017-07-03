@@ -9,8 +9,7 @@ module.exports = {
   	var endpoint = "http://api.openweathermap.org";
   	var path = "/data/2.5/forecast?id=" + cityid + "&APPID=" + apikey;
 	var options = {
-	    hostname: endpoint,
-	    path: path,
+	    uri: endpoint + path,
 	    method: 'GET',
 	    json:true
 	}
