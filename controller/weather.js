@@ -26,7 +26,8 @@ request(options, function(error, response, body){
 	    	sensorname: "Current Temperature", 
 	    	sensorunits: "Celcius", 
 	    	value: TempConvert.k2c(currentweather.main.temp), 
-	    	DateTime: currentweather.dt};
+	    	DateTime: new Date(currentweather.dt * 1000)
+	    };
 	    console.log("Parse Finish");
 		index.PostToMongoDB(SensorObject);
     }
