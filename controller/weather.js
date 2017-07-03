@@ -19,7 +19,7 @@ module.exports = {
     console.log(response);
 	return response;
   
-  });
+  })
   .fail(function(xhr) {
     console.log('error', xhr);
   });
