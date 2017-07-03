@@ -7,7 +7,7 @@ var express = require('express'),
     router = express.Router(),
     http = require('http'),
     mongoose = require('mongoose'),
-    path = require("path"),
+    path = require("path");
     
 
 var SchemaName = "Settings";
