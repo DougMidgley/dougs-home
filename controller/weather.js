@@ -21,6 +21,7 @@ module.exports = {
     console.log(err)
   });
     res.on('end', function(chunk){
+    		console.log(JSONString);
     		console.log("Start Parsing Data");
     		var parsedjson = JSON.parse(JSONString);
     		console.log(parsedjson.list[0]);
