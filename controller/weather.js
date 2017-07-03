@@ -11,7 +11,7 @@ module.exports = {
     res.setEncoding('utf8');
     res.on('data', function(data){
     		var jsonbody = JSON.parse(data);
-        		console.log('success', jsonbody);
+        		console.log(jsonbody);
 		    var currentweather = jsonbody.list[0];
 		    var SensorObject = {
 		    	sensorname: "Current Temperature", 
