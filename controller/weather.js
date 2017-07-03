@@ -10,10 +10,10 @@ module.exports = {
 
   	request.get(url, function(res){
     res.setEncoding('utf8');
-    res.on('data', function(data){
+    res.on('end', function(data){
     		console.log("Start Parsing Data");
     		var parsedjson = JSON.parse(data);
-    		console.log(parsedjson.list);
+    		console.log(parsedjson.list[0]);
 		    var currentweather = parsedjson.list[0];
 		    var SensorObject = {
 		    	sensorname: "Current Temperature", 
