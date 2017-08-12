@@ -8,11 +8,11 @@ module.exports = {
         console.log("res",res);
         if (err){
         	console.log('Error on save!');
-            res.status(500).send("Error occurred on submitting data");
+            response.status(500).send("Error occurred on submitting data");
         } 
         else{
         	console.log('saved');
-        	res.status(200).json(JSONObject);
+        	response.status(200).json(JSONObject);
         }
     });
   }
