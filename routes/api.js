@@ -63,7 +63,7 @@ router.get("/data", function(req, res) {
 /*POST Sensor Data*/ 
 router.post("/data", function(req, res) {
     console.log(req);
-    index.PostToMongoDB(req.body);
+    index.PostToMongoDB(req.body,res);
 });
 
 router.get("/chartdata", function(req, res) {
