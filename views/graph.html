@@ -60,6 +60,8 @@ $(document).ready(function() {
 
 
 sList.change(function() {
+  console.log("this", this);
+    console.log("this.value", this.value);
   if(this.value  != 'All'){
       loadGraph({
         "sensorname": this.value 
