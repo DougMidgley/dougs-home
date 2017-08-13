@@ -20,7 +20,7 @@ router.get("/settings", function(req, res) {
      var query = Model_Settings.find(filtervalue, function(err, doc) {
             if (err) throw err;
             console.log('doc');
-            console.log(doc); 
+            //console.log(doc); 
             //res.render('Raw', { title: 'Heres your JSON Response', message: doc});
             res.status(200).json(doc);
         });
@@ -31,7 +31,7 @@ router.post("/settings", function(req, res) {
     // retrieve the model 
     var settings = mongoose.model('settings');
     //get req
-    console.log(req.body);
+    //console.log(req.body);
     var newRecord = new settings(req.body);
     newRecord.save(function(err) {
         if (err) console.log('Error on save!');
@@ -62,7 +62,7 @@ router.get("/data", function(req, res) {
 
 /*POST Sensor Data*/ 
 router.post("/data", function(req, res) {
-    console.log(req);
+    //console.log(req);
     index.PostToMongoDB(req.body,res);
 });
 
