@@ -6,11 +6,13 @@
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <title>Chartist template</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
 
 </head>
 <body>
@@ -21,8 +23,8 @@
   <div class="col-md-8"><div class="ct-chart ct-golden-section" id="chart1"></div></div>
   <div class="col-md-4"> 
 <div class="form-group">
-<label for="SensorList">Example select</label>
-<select class="form-control sensorlist" id="sensorlist">
+<label for="SensorList">Select the Sensor</label>
+<select class="form-control sensorlist" id="sensorlist" multiple="multiple">
   <option value = "All">All</option>
 </select>
 </div>
@@ -51,6 +53,12 @@ $.each(sensors, function(i) {
         .text(this)
         .appendTo(sList);
 });
+//create multiselect
+$(document).ready(function() {
+    $('.sensorlist').multiselect();
+});
+
+
 sList.change(function() {
   if(this.value  != 'All'){
       loadGraph({
