@@ -23,10 +23,6 @@
 
 <div>
   <select class="mylist">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
 </select>
 </div>
 
@@ -41,11 +37,11 @@ $.each(countries, function(i) {
         .appendTo(cList);
 });
 
-  $.ajax({
-    url: "https://dougs-home.herokuapp.com/graph/timeseries?",
-    method: "GET"}
-    )
-  .done(function(data) {
+
+function loadGraph(filter){
+
+  var url ="https://dougs-home.herokuapp.com/graph/timeseries";
+  $.post(url,filter,function(data) {
     console.log('success', data) 
     console.log(Object.keys(data));
     console.log(Object.values(data));
@@ -59,10 +55,9 @@ $.each(countries, function(i) {
       }
     };
   new Chartist.Line('#chart1',data,options);
-  })
-  .fail(function(xhr) {
-    console.log('error', xhr);
   });
+}
+
 
 </script>
 
