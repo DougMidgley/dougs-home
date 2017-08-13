@@ -23,26 +23,42 @@
 
 <div>
   <select class="mylist">
+  <option value = "All">All</option>
 </select>
 </div>
 
   <script>
-    var countries = ['United States', 'Canada', 'Argentina', 'Armenia'];
-var cList = $('select.mylist')
-$.each(countries, function(i) {
-    var opt = $(' <option></option>')
+var uiLoaded = false;
+
+function loadUI(data){
+    var sensors = [];
+      for (var i = 0; i<data.length;i++) {
+        sensors.push(data[i].name);
+      }
+var sList = $('select.sensorlist');
+$.each(sensors, function(i) {
+    var opt = $(' <option></option>');
         //.addClass('ui-menu-item')
         .attr('value',this)
         .text(this)
-        .appendTo(cList);
+        .appendTo(sList);
 });
-loadGraph(null);
+
+}
+
+sList.change(function() {
+  console.log(this.text());
+});
+
 
 function loadGraph(filter){
 
   var url ="https://dougs-home.herokuapp.com/graph/timeseries";
   $.post(url,filter,function(data) {
     console.log('success', data) 
+    if (!uiLoaded){
+      loadUI(data.series);
+    }
     console.log(Object.keys(data));
     console.log(Object.values(data));
     var options = {
