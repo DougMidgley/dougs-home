@@ -25,7 +25,6 @@
 <div class="form-group">
 <label for="SensorList">Select the Sensor</label>
 <select class="form-control sensorlist" id="sensorlist" multiple="multiple">
-  <option value = "All">All</option>
 </select>
 </div>
 </div>
@@ -80,19 +79,6 @@ $(document).ready(function() {
 });
 });
 
-/*
-sList.change(function() {
-  console.log("this", this);
-    console.log("this.value", this.value);
-  if(this.value  != 'All'){
-      loadGraph({
-        "sensorname": this.value 
-      });
-  } else { 
-    loadGraph();
-  }
-
-});*/
 uiLoaded = true;
 }
 
