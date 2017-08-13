@@ -48,7 +48,12 @@ $.each(sensors, function(i) {
         .appendTo(sList);
 });
 sList.change(function() {
-  console.log(this.text());
+  if(this != 'All'){
+      loadGraph({
+        "sensorname": this
+      });
+  }
+
 });
 }
 
@@ -56,7 +61,7 @@ sList.change(function() {
 
 
 function loadGraph(filter){
-  console.log('loadGraph');
+  console.log('loadGraph with filter', filter);
   var url ="https://dougs-home.herokuapp.com/graph/timeseries";
   $.post(url,filter,function(data) {
     console.log('success', data) 
