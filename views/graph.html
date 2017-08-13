@@ -34,13 +34,13 @@ function loadUI(data){
   console.log("loadUI");
     var sensors = [];
       for (var i = 0; i<data.length;i++) {
-        console.log(data[i]);
         sensors.push(data[i].name);
       }
       console.log(sensors);
 
 var sList = $('select.sensorlist');
 $.each(sensors, function(i) {
+    consolel.log('for loop');
     var opt = $(' <option></option>')
         //.addClass('ui-menu-item')
         .attr('value',this)
