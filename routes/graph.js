@@ -64,6 +64,28 @@ router.get("/timeseries", function(req, res) {
 
 });
 
+router.post("/timeseries", function(req, res) {
+    var filtervalue = "";
+    if(req.body !== 'undefined' ){
+        //filtervalue = req.body; 
+        console.log(req.body);
+        filtervalue = req.body;
+    }
+
+    // retrieve the model 
+    //get req
+     var query = Model_Data.find(filtervalue, function(err, doc) {
+            if (err) throw err;
+            console.log('doc');
+            console.log(doc); 
+            //res.render('Raw', { title: 'Heres your JSON Response', message: doc});
+            var parseddata = parsefortimeseries(doc);
+            //console.log(parseddata);
+            res.status(200).json(parseddata);
+        });
+
+});
+
 function parsefortimeseries(doc){
     console.log(doc.length);
     var data= {series: []};
@@ -74,13 +96,13 @@ function parsefortimeseries(doc){
         var body = new Object();
         body.name = uniquesensors[i];
         var filteredObjects = doc.filter(function(d){
-            console.log(d.DateTime );
+            //console.log(d.DateTime );
             return d.sensorname == body.name && d.DateTime !== 'undefined';
         });
         body.data = [];
         for (ii = 0; ii<filteredObjects.length;ii++){
             body.data[ii] = {x: new Date(filteredObjects[ii].DateTime).valueOf(), y: filteredObjects[ii].value};
-            console.log(body);
+            //console.log(body);
         }
         data.series.push(body);
         
