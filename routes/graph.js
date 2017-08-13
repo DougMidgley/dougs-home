@@ -66,7 +66,7 @@ router.get("/timeseries", function(req, res) {
 
 router.post("/timeseries", function(req, res) {
     var filtervalue = "";
-    console.log(req.body);
+    console.log(req);
     if(req.body !== 'undefined' ){
         //filtervalue = req.body; 
         console.log(req.body);
