@@ -18,6 +18,11 @@ var mongoose = require('mongoose');
       "type": "Number",
       "min": 0
     }
+    ,
+    "iterations": {
+      "type": "Number",
+      "min": 0
+    }
   });
   var Model_Data = mongoose.model('Data', SchemaOject);
 
