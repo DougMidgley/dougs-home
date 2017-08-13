@@ -48,9 +48,9 @@ $.each(sensors, function(i) {
         .appendTo(sList);
 });
 sList.change(function() {
-  if(this != 'All'){
+  if(this.value  != 'All'){
       loadGraph({
-        "sensorname": this
+        "sensorname": this.value 
       });
   }
 
