@@ -55,10 +55,32 @@ $.each(sensors, function(i) {
 });
 //create multiselect
 $(document).ready(function() {
-    $('.sensorlist').multiselect();
+    $('.sensorlist').multiselect({
+    selectAllValue: 'multiselect-all',
+    enableCaseInsensitiveFiltering: true,
+    enableFiltering: true,
+    maxHeight: '300',
+    buttonWidth: '235',
+    onChange: function(element, checked) {
+        var sensorsselected = $('#sensorlist option:selected');
+        var selected = [];
+        $(sensorsselected).each(function(index, brand){
+            selected.push([$(this).val()]);
+        });
+        console.log(selected);
+        if(selected.length>0){
+            loadGraph({
+              "sensorname": selected 
+            });
+        } else { 
+          loadGraph();
+        }
+
+    }
+});
 });
 
-
+/*
 sList.change(function() {
   console.log("this", this);
     console.log("this.value", this.value);
@@ -70,7 +92,7 @@ sList.change(function() {
     loadGraph();
   }
 
-});
+});*/
 uiLoaded = true;
 }
 
