@@ -6,26 +6,25 @@
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <title>Chartist template</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <script  src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
-    <script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://momentjs.com/downloads/moment.js"></script>
-  </script>
 
 </head>
 <body>
-  <h1>Here is the data</h1>
-
+<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Doug's Sensor Data</a></nav>
+<div class="container">
 <div class="row">
   <div class="col-md-8"><div class="ct-chart ct-golden-section" id="chart1"></div></div>
-  <div class="col-md-4">4</div>
-</div>
-
-<div>
-  <select class="sensorlist">
+  <div class="col-md-4">  <select class="sensorlist">
   <option value = "All">All</option>
-</select>
-</div>
+</select></div>
+</div></div>
+
+
 
   <script>
 var uiLoaded = false;
