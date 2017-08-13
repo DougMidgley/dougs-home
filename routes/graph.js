@@ -77,7 +77,7 @@ router.post("/timeseries", function(req, res) {
      var query = Model_Data.find(filtervalue, function(err, doc) {
             if (err) throw err;
             console.log('doc');
-            .//console.log(doc); 
+            //console.log(doc); 
             //res.render('Raw', { title: 'Heres your JSON Response', message: doc});
             var parseddata = parsefortimeseries(doc);
             //console.log(parseddata);
