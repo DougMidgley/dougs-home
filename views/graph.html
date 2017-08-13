@@ -21,6 +21,12 @@
   <div class="col-md-4">4</div>
 </div>
 
+<div>
+  <ul class="mylist">
+
+</ul>
+</div>
+
   <script>
     var countries = ['United States', 'Canada', 'Argentina', 'Armenia'];
 var cList = $('ul.mylist')
@@ -34,7 +40,7 @@ $.each(countries, function(i) {
         .text( this )
         .appendTo(li);
 });
-  
+
   $.ajax({
     url: "https://dougs-home.herokuapp.com/graph/timeseries?",
     method: "GET"}
