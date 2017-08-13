@@ -22,6 +22,19 @@
 </div>
 
   <script>
+    var countries = ['United States', 'Canada', 'Argentina', 'Armenia'];
+var cList = $('ul.mylist')
+$.each(countries, function(i) {
+    var li = $('<li/>')
+        .addClass('ui-menu-item')
+        .attr('role', 'menuitem')
+        .appendTo(cList);
+    var a = $('<a/>')
+        .addClass('ui-all')
+        .text( this )
+        .appendTo(li);
+});
+  
   $.ajax({
     url: "https://dougs-home.herokuapp.com/graph/timeseries?",
     method: "GET"}
