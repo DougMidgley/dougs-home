@@ -31,6 +31,7 @@
 var uiLoaded = false;
 
 function loadUI(data){
+  console.log("loadUI");
     var sensors = [];
       for (var i = 0; i<data.length;i++) {
         sensors.push(data[i].name);
@@ -52,7 +53,7 @@ sList.change(function() {
 
 
 function loadGraph(filter){
-
+  console.log('loadGraph');
   var url ="https://dougs-home.herokuapp.com/graph/timeseries";
   $.post(url,filter,function(data) {
     console.log('success', data) 
@@ -74,7 +75,7 @@ function loadGraph(filter){
   });
 }
 
-
+loadGraph();
 </script>
 
 </body>
