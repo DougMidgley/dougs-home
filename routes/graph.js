@@ -65,19 +65,10 @@ router.get("/timeseries", function(req, res) {
 });
 
 router.post("/timeseries", function(req, res) {
-    var filtervalue = "";
-    if(req.body !== 'undefined' ){
-        //filtervalue = req.body; 
-        console.log(req.body);
-        filtervalue = req.body;
-    }
-
-    // retrieve the model 
-    //get req
+    //req.body used filtering data
      var query = Model_Data.find(req.body, function(err, doc) {
             if (err) throw err;
             var parseddata = parsefortimeseries(doc);
-            //console.log(parseddata);
             res.status(200).json(parseddata);
         });
 
