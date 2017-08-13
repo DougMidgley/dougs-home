@@ -55,6 +55,7 @@ $.each(sensors, function(i) {
 //create multiselect
 $(document).ready(function() {
     $('.sensorlist').multiselect({
+      includeSelectAllOption: true,
     selectAllValue: 'multiselect-all',
     enableCaseInsensitiveFiltering: true,
     enableFiltering: true,
@@ -77,6 +78,7 @@ $(document).ready(function() {
 
     }
 });
+
 });
 
 uiLoaded = true;
