@@ -98,5 +98,19 @@ function parsefortimeseries(doc){
     //console.log("end of function");
     return data;
 }
+function authenticate( req, res, next ) {
+    var whitelistedsites = process.env.WHITELIST.split("|")
+    console.log(whitelistedsites);
+    if (whitelistedsites.includes(req.get('host'))) {
+        // calls function
+        next();
+    } else {
+      // bypasses route1 and route2
+      // errorHandler will be called with the error
+      res.status(401).send('Not in whitelist ');
+      return next( Error( 'Authenticate failed' ) );
+    }
+
+}
 
 module.exports = router;
