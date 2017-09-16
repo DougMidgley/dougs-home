@@ -64,7 +64,7 @@ router.get("/timeseries", function(req, res) {
 
 });
 
-router.post("/timeseries", function(req, res) {
+router.post("/timeseries", authenticate, function(req, res) {
     //req.body used filtering data
      var query = Model_Data.find(req.body, function(err, doc) {
             if (err) throw err;
