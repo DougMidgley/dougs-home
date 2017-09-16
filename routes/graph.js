@@ -97,10 +97,7 @@ function parsefortimeseries(doc){
     return data;
 }
 function authenticate( req, res, next ) {
-    console.log(req);
-    var whitelistedsites = process.env.WHITELIST.split("|")
-    console.log(whitelistedsites);
-    if (whitelistedsites.includes(req.get('host'))) {
+    if (process.env.WHITELIST.split("|").includes(req.get('origin'))) {
         // calls function
         next();
     } else {
