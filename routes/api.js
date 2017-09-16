@@ -41,9 +41,9 @@ router.post("/settings", function(req, res) {
     });
 });
 
-router.get("/data", function(req, res) {
+router.get("/data",authenticate, function(req, res) {    
     console.log('token', req.get('token'));
-    consoel.log('apitoken',process.env.APITOKEN);
+    console.log('apitoken',process.env.APITOKEN);
     var filtervalue = "";
     if(req.body !== 'undefined' ){
         //filtervalue = req.body; 
@@ -60,7 +60,6 @@ router.get("/data", function(req, res) {
             //res.render('Raw', { title: 'Heres your JSON Response', message: doc});
             res.status(200).json(doc);
         });
-
 });
 
 /*POST Sensor Data*/ 
@@ -104,4 +103,16 @@ function parsemongodata(doc){
     console.log(data);
     return data;
 }
+
+function authenticate( req, res, next ) {
+    if ( req.get('token') != process.env.APITOKEN ) {
+      // bypasses route1 and route2
+      // errorHandler will be called with the error
+      res.status(401).send('Token is invalid');
+      return next( Error( 'Authenticate failed' ) );
+    }
+    // calls function
+    next();
+}
+
 module.exports = router;
