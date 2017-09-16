@@ -42,8 +42,7 @@ router.post("/settings", function(req, res) {
 });
 
 router.get("/data",authenticate, function(req, res) {    
-    console.log('token', req.get('token'));
-    console.log('apitoken',process.env.APITOKEN);
+    console.log('req', req);
     var filtervalue = "";
     if(req.body !== 'undefined' ){
         //filtervalue = req.body; 
@@ -55,8 +54,6 @@ router.get("/data",authenticate, function(req, res) {
     //get req
      var query = Model_Data.find(filtervalue, function(err, doc) {
             if (err) throw err;
-            console.log('doc');
-            console.log(doc); 
             //res.render('Raw', { title: 'Heres your JSON Response', message: doc});
             res.status(200).json(doc);
         });
