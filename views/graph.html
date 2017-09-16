@@ -17,6 +17,9 @@
   .ct-label {
     font-size: 14px !important;
   }
+  .ct-line {
+    stroke-width: 2px !important;
+}
 </style>
 </head>
 <body>
@@ -111,6 +114,18 @@ function loadGraph(filter){
     };
   new Chartist.Line('#chart1',data,options);
   });
+  chart.on('draw', function(data) {
+  if(data.type === 'point') {
+    var point = new Chartist.Svg('circle', {
+      cx: data.x,
+      cy: data.y,
+      // Edir r value for diffrent sizes
+      r:  1
+    }, 'ct-slice');
+
+    data.element.replace(point);
+  }
+});
 }
 
 loadGraph();
