@@ -80,9 +80,13 @@ $(document).ready(function() {
             selected.push([$(this).val()]);
         });
         console.log(selected);
+        var todayminus7 = new Date();
+        todayminus7.setDate(todayminus7.getDate()-7);
+
         if(selected.length>0){
             loadGraph({
-              "sensorname": selected 
+              "sensorname": selected,
+              "DateTime": {$gt: todayminus7}
             });
         } else { 
           loadGraph();
