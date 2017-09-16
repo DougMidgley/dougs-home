@@ -42,7 +42,7 @@ function parsemongodata(doc){
     return data;
 }
 
-router.get("/timeseries", function(req, res) {
+router.get("/timeseries", authenticate, function(req, res) {
     var filtervalue = "";
     if(req.query !== 'undefined' ){
         //filtervalue = req.body; 
@@ -53,9 +53,7 @@ router.get("/timeseries", function(req, res) {
     // retrieve the model 
     //get req
      var query = Model_Data.find(filtervalue, function(err, doc) {
-            if (err) throw err;
-            console.log('doc');
-            console.log(doc); 
+            if (err) throw err; 
             //res.render('Raw', { title: 'Heres your JSON Response', message: doc});
             var parseddata = parsefortimeseries(doc);
             console.log(parseddata);
@@ -99,6 +97,7 @@ function parsefortimeseries(doc){
     return data;
 }
 function authenticate( req, res, next ) {
+    console.log(req);
     var whitelistedsites = process.env.WHITELIST.split("|")
     console.log(whitelistedsites);
     if (whitelistedsites.includes(req.get('host'))) {
