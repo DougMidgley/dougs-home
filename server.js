@@ -98,7 +98,7 @@ app.post("/api/makeschema", function(req, res) {
 
 
 
-console.log("here is codeenvycommit")
+console.log("deploy to github")
 
 
 
