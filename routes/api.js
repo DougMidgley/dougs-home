@@ -60,7 +60,7 @@ router.get("/data",authenticate, function(req, res) {
 });
 
 /*POST Sensor Data*/ 
-router.post("/data", function(req, res) {
+router.post("/data",authenticate, function(req, res) {
     //console.log(req);
     index.PostToMongoDB(req.body,res);
 });
