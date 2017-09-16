@@ -42,8 +42,8 @@ router.post("/settings", function(req, res) {
 });
 
 router.get("/data", function(req, res) {
-    console.log(req.get('token'));
-    consoel.log(process.env.APITOKEN);
+    console.log('token', req.get('token'));
+    consoel.log('apitoken',process.env.APITOKEN);
     var filtervalue = "";
     if(req.body !== 'undefined' ){
         //filtervalue = req.body; 
