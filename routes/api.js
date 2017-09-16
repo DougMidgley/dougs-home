@@ -8,6 +8,7 @@ var mongoose = require('mongoose'),
 console.log('settings loaded');
 
 router.get("/settings", function(req, res) {
+    
     var filtervalue = "";
     if(req.body !== 'undefined' ){
         //filtervalue = req.body; 
@@ -41,6 +42,8 @@ router.post("/settings", function(req, res) {
 });
 
 router.get("/data", function(req, res) {
+    console.log(req.get('token'));
+    consoel.log(process.env.APITOKEN);
     var filtervalue = "";
     if(req.body !== 'undefined' ){
         //filtervalue = req.body; 
